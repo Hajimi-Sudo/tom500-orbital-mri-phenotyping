@@ -1,0 +1,68 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Local secrets and machine-specific files
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+*cookie*
+*credentials*
+*token*
+
+# Raw and intermediate medical imaging data
+data/
+*.nii
+*.nii.gz
+*.dcm
+*.mha
+*.nrrd
+
+# Patient-level derived tables are kept outside the public code repository
+analysis/clinical_characteristics.csv
+analysis/pilot_features.csv
+analysis/legacy_nonzero_image_denominator/pilot_features.csv
+analysis/server_results/**/pilot_features.csv
+analysis/pilot_report.json
+analysis/**/pilot_report.json
+analysis/adjusted_association.json
+analysis/feature_audit.json
+analysis/next_gate_report.json
+
+# LaTeX build intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Server execution logs may contain machine-specific paths
+analysis/**/run.log
+
+# Internal workspace guidance is not part of the public release
+AGENTS.md
+
+# Generated alternate figure formats
+manuscript/**/figures/*.png
+manuscript/**/figures/*.pdf
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp

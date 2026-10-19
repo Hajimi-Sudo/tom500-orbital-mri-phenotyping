@@ -1,0 +1,3 @@
+Li W, Zhang X, Dai T. Edge information-augmented auxiliary diagnosis method for cervical cancer in medical decision-making systems. Advanced Intelligent Systems. 2025. doi:10.1002/aisy.202500638
+Li B, Tang H, Zhu J. KDLM: lightweight brain tumor segmentation via knowledge distillation. Advanced Intelligent Systems. 2026. doi:10.1002/aisy.202501207
+Wu J, Zhang L, Gou F. FFBFormer: a decision-support transformer network for brain glioma analysis. 2025 IEEE International Conference on Bioinformatics and Biomedicine. 2025:2994-2999. doi:10.1109/BIBM66473.2025.11356049

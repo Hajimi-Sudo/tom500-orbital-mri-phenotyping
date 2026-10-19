@@ -1,0 +1,5 @@
+partition,n,contrast,common_odds_ratio,ci95_low,ci95_high,p,overall_wald_p,threshold_fit_note
+train,396,cluster_1_vs_0,1.5065974947,0.9782704458,2.3202540982,0.0628501301,0.0000013805,"thresholds CAS>=5 and CAS>=6 did not converge because of sparse events"
+train,396,cluster_2_vs_0,4.2711361911,2.4520833750,7.4396346178,0.0000002931,0.0000013805,"thresholds CAS>=5 and CAS>=6 did not converge because of sparse events"
+val,100,cluster_1_vs_0,2.2246905807,0.8412634930,5.8831129853,0.1070507082,0.0366459092,"threshold CAS>=5 did not converge because of sparse events"
+val,100,cluster_2_vs_0,4.3986328222,1.4188524820,13.6363511760,0.0102880478,0.0366459092,"threshold CAS>=5 did not converge because of sparse events"

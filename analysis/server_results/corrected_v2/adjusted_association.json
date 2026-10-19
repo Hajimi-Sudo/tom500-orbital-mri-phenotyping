@@ -1,0 +1,157 @@
+{
+  "design": {
+    "phenotype": "frozen 3-cluster volume solution",
+    "covariates": [
+      "Age",
+      "Sex",
+      "SmokingIndex",
+      "DiseaseDuration"
+    ],
+    "validation_role": "within-validation sensitivity association, not external validation"
+  },
+  "train": {
+    "n_total": 400,
+    "n_complete": 400,
+    "join_missing": 0,
+    "standardization_reference": {
+      "Age_mean": 46.94,
+      "Age_sd": 12.992166870849527,
+      "SmokingIndex_mean": 66.3135,
+      "SmokingIndex_sd": 181.70336779418813,
+      "DiseaseDuration_mean": 23.957070707070706,
+      "DiseaseDuration_sd": 43.207342196692345
+    },
+    "cas_continuous_ols": {
+      "family": "ols",
+      "n": 396,
+      "r_squared": 0.16276348375948713,
+      "cluster_effects": {
+        "cluster_1": {
+          "estimate": 0.3743877062190438,
+          "ci95_low": 0.07856875504494071,
+          "ci95_high": 0.6702066573931469,
+          "p": 0.013118891881180504
+        },
+        "cluster_2": {
+          "estimate": 1.1898164635349135,
+          "ci95_low": 0.7670487116886966,
+          "ci95_high": 1.6125842153811305,
+          "p": 3.4675328834461426e-08
+        }
+      },
+      "cluster_overall": {
+        "statistic": 30.757786583542394,
+        "p": 2.0942643773590395e-07
+      }
+    },
+    "active_cas_ge_3_logistic": {
+      "family": "logistic",
+      "n": 396,
+      "cluster_effects": {
+        "cluster_1": {
+          "odds_ratio": 2.4208831925127416,
+          "ci95_low": 1.2029460181064657,
+          "ci95_high": 4.871935517951057,
+          "p": 0.013219717219702087
+        },
+        "cluster_2": {
+          "odds_ratio": 6.55276621110529,
+          "ci95_low": 3.1143015076251843,
+          "ci95_high": 13.787600497983314,
+          "p": 7.304672489710705e-07
+        }
+      },
+      "cluster_overall": {
+        "statistic": 26.156275858497004,
+        "p": 2.0904359415836254e-06
+      }
+    }
+  },
+  "validation": {
+    "n_total": 100,
+    "n_complete": 100,
+    "join_missing": 0,
+    "standardization_reference": {
+      "Age_mean": 46.94,
+      "Age_sd": 12.992166870849527,
+      "SmokingIndex_mean": 66.3135,
+      "SmokingIndex_sd": 181.70336779418813,
+      "DiseaseDuration_mean": 23.957070707070706,
+      "DiseaseDuration_sd": 43.207342196692345
+    },
+    "cas_continuous_ols": {
+      "family": "ols",
+      "n": 100,
+      "r_squared": 0.21242509036532664,
+      "cluster_effects": {
+        "cluster_1": {
+          "estimate": 0.4937075582282214,
+          "ci95_low": -0.2028609805709159,
+          "ci95_high": 1.1902760970273587,
+          "p": 0.16478240790143495
+        },
+        "cluster_2": {
+          "estimate": 1.075954893716514,
+          "ci95_low": 0.19822424224083635,
+          "ci95_high": 1.9536855451921915,
+          "p": 0.016279126131056604
+        }
+      },
+      "cluster_overall": {
+        "statistic": 6.010039220891713,
+        "p": 0.04953778286090979
+      }
+    },
+    "active_cas_ge_3_logistic": {
+      "family": "logistic",
+      "n": 100,
+      "cluster_effects": {
+        "cluster_1": {
+          "odds_ratio": 1.877186339896598,
+          "ci95_low": 0.47125986763958894,
+          "ci95_high": 7.477463702445687,
+          "p": 0.3718178136873298
+        },
+        "cluster_2": {
+          "odds_ratio": 2.410555141191103,
+          "ci95_low": 0.4888053726757099,
+          "ci95_high": 11.887709124216038,
+          "p": 0.27981066436930435
+        }
+      },
+      "cluster_overall": {
+        "statistic": 1.2203247619071451,
+        "p": 0.5432626464052894
+      }
+    }
+  },
+  "mask_spacing_audit": {
+    "cases": 500,
+    "errors": [],
+    "shape_counts": {
+      "(512, 512, 20)": 500
+    },
+    "spacing_counts": {
+      "(0.3125, 0.3125, 3.85)": 467,
+      "(0.30928, 0.30928, 3.85)": 27,
+      "(0.3125, 0.3125, 3.9)": 1,
+      "(0.31188, 0.31188, 3.85)": 1,
+      "(0.31015, 0.31015, 3.85)": 1,
+      "(0.3125, 0.3125, 4.1)": 1,
+      "(0.31211, 0.31211, 3.85)": 1,
+      "(0.31064, 0.31064, 3.85)": 1
+    },
+    "mask_value_counts": {
+      "0": 500,
+      "1": 500,
+      "2": 500,
+      "3": 500,
+      "4": 500,
+      "5": 500,
+      "6": 500,
+      "7": 500,
+      "8": 500,
+      "9": 500
+    }
+  }
+}

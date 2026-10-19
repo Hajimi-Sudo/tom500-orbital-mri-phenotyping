@@ -1,0 +1,394 @@
+{
+  "design": {
+    "phenotype": "frozen 3-cluster volume solution",
+    "covariates": [
+      "Age",
+      "Sex",
+      "SmokingIndex",
+      "DiseaseDuration"
+    ],
+    "primary_sensitivity": "proportional-odds ordinal logistic regression for CAS 0-6",
+    "assumption_check": "threshold-specific binary logistic coefficients, exploratory correlated-threshold approximation",
+    "validation_role": "fixed internal validation partition, not external validation"
+  },
+  "train": {
+    "n_total": 400,
+    "n_complete": 396,
+    "join_missing": 0,
+    "standardization_reference": {
+      "Age_mean": 46.94,
+      "Age_sd": 12.992166870849527,
+      "SmokingIndex_mean": 66.3135,
+      "SmokingIndex_sd": 181.70336779418813,
+      "DiseaseDuration_mean": 23.957070707070706,
+      "DiseaseDuration_sd": 43.207342196692345
+    },
+    "ordered_model": {
+      "family": "proportional_odds_logistic",
+      "n": 396,
+      "categories": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "converged": true,
+      "log_likelihood": -611.1012587188807,
+      "aic": 1246.2025174377613,
+      "cluster_effects": {
+        "cluster_1": {
+          "common_odds_ratio": 1.5065974946552145,
+          "ci95_low": 0.9782704457520313,
+          "ci95_high": 2.3202540981972177,
+          "p": 0.06285013009747333
+        },
+        "cluster_2": {
+          "common_odds_ratio": 4.271136191058581,
+          "ci95_low": 2.4520833750134163,
+          "ci95_high": 7.439634617836185,
+          "p": 2.9314366094536975e-07
+        }
+      },
+      "cluster_overall": {
+        "wald_statistic": 26.98605802601638,
+        "df": 2,
+        "p": 1.3805494125244356e-06
+      },
+      "threshold_parameters": {
+        "0/1": -0.42970190598619645,
+        "1/2": 0.22241329066500073,
+        "2/3": -0.10780367934789777,
+        "3/4": 0.12028801246197393,
+        "4/5": 0.08314198546210008,
+        "5/6": 0.3758692102661664
+      }
+    },
+    "proportional_odds_check": {
+      "threshold_models": [
+        {
+          "threshold": 1,
+          "n_positive": 271,
+          "n_negative": 125,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.17640323851043788,
+            "odds_ratio": 1.1929189925562482,
+            "ci95_low": 0.7132095734016409,
+            "ci95_high": 1.9952841014376383,
+            "p": 0.5014865738590673
+          },
+          "cluster_2": {
+            "log_odds_ratio": 0.5397172841671142,
+            "odds_ratio": 1.7155217884478218,
+            "ci95_low": 0.8732751436909085,
+            "ci95_high": 3.370089058301285,
+            "p": 0.117199963246129
+          }
+        },
+        {
+          "threshold": 2,
+          "n_positive": 162,
+          "n_negative": 234,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.7732376185241684,
+            "odds_ratio": 2.166770084764556,
+            "ci95_low": 1.2662523685779965,
+            "ci95_high": 3.7077068653407323,
+            "p": 0.0047834082481980665
+          },
+          "cluster_2": {
+            "log_odds_ratio": 1.6524135704395144,
+            "odds_ratio": 5.2195624181465465,
+            "ci95_low": 2.7112937754377446,
+            "ci95_high": 10.048277351475585,
+            "p": 7.628889190003984e-07
+          }
+        },
+        {
+          "threshold": 3,
+          "n_positive": 95,
+          "n_negative": 301,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.8841324291724968,
+            "odds_ratio": 2.4208831925132612,
+            "ci95_low": 1.1925761712886238,
+            "ci95_high": 4.9142986191485925,
+            "p": 0.014385278248690455
+          },
+          "cluster_2": {
+            "log_odds_ratio": 1.879887282800557,
+            "odds_ratio": 6.552766211106669,
+            "ci95_low": 3.050766134450587,
+            "ci95_high": 14.074741597704966,
+            "p": 1.4389017611415905e-06
+          }
+        },
+        {
+          "threshold": 4,
+          "n_positive": 41,
+          "n_negative": 355,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 1.3597468713179222,
+            "odds_ratio": 3.8952071883316766,
+            "ci95_low": 0.8094390682167276,
+            "ci95_high": 18.74463395182735,
+            "p": 0.0898417208723427
+          },
+          "cluster_2": {
+            "log_odds_ratio": 3.152248043889191,
+            "odds_ratio": 23.38858408928341,
+            "ci95_low": 5.046176267411662,
+            "ci95_high": 108.40403440406718,
+            "p": 5.611588529055355e-05
+          }
+        },
+        {
+          "threshold": 5,
+          "n_positive": 16,
+          "n_negative": 380,
+          "converged": false,
+          "cluster_1": {
+            "log_odds_ratio": 24.731331798573,
+            "odds_ratio": 55040317471.71812,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.9998470165737366
+          },
+          "cluster_2": {
+            "log_odds_ratio": 25.791187125220553,
+            "odds_ratio": 158843793463.9393,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.999840460505571
+          }
+        },
+        {
+          "threshold": 6,
+          "n_positive": 4,
+          "n_negative": 392,
+          "converged": false,
+          "cluster_1": {
+            "log_odds_ratio": 24.177401145846662,
+            "odds_ratio": 31630925873.711433,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.9998504422312098
+          },
+          "cluster_2": {
+            "log_odds_ratio": 24.869674345046654,
+            "odds_ratio": 63206586222.236755,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.9998461599333253
+          }
+        }
+      ],
+      "cluster_1_heterogeneity": {
+        "log_or_range": [
+          0.17640323851043788,
+          24.731331798573
+        ],
+        "q_statistic_independent_threshold_approximation": 4.515222964184161,
+        "df": 5,
+        "p": 0.47784924508052107,
+        "interpretation": "descriptive threshold-coefficient check; threshold estimates are correlated because they use the same cases"
+      },
+      "cluster_2_heterogeneity": {
+        "log_or_range": [
+          0.5397172841671142,
+          25.791187125220553
+        ],
+        "q_statistic_independent_threshold_approximation": 13.293362490820954,
+        "df": 5,
+        "p": 0.0207793843218087,
+        "interpretation": "descriptive threshold-coefficient check; threshold estimates are correlated because they use the same cases"
+      },
+      "overall_interpretation": "The proportional-odds form was treated as a sensitivity model. Threshold-specific coefficients were inspected for direction and magnitude; the heterogeneity p-values are exploratory because threshold fits are correlated."
+    }
+  },
+  "validation": {
+    "n_total": 100,
+    "n_complete": 100,
+    "join_missing": 0,
+    "standardization_reference": {
+      "Age_mean": 46.94,
+      "Age_sd": 12.992166870849527,
+      "SmokingIndex_mean": 66.3135,
+      "SmokingIndex_sd": 181.70336779418813,
+      "DiseaseDuration_mean": 23.957070707070706,
+      "DiseaseDuration_sd": 43.207342196692345
+    },
+    "ordered_model": {
+      "family": "proportional_odds_logistic",
+      "n": 100,
+      "categories": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "converged": true,
+      "log_likelihood": -142.34901946111435,
+      "aic": 306.6980389222287,
+      "cluster_effects": {
+        "cluster_1": {
+          "common_odds_ratio": 2.2246905807213992,
+          "ci95_low": 0.8412634930314036,
+          "ci95_high": 5.883112985345918,
+          "p": 0.10705070822309089
+        },
+        "cluster_2": {
+          "common_odds_ratio": 4.398632822170722,
+          "ci95_low": 1.4188524814720476,
+          "ci95_high": 13.636351175989917,
+          "p": 0.010288047824601224
+        }
+      },
+      "cluster_overall": {
+        "wald_statistic": 6.612906951945732,
+        "df": 2,
+        "p": 0.036645909160222694
+      },
+      "threshold_parameters": {
+        "0/1": 0.5781565614533254,
+        "1/2": -0.0696371340012987,
+        "2/3": -0.3674166590420088,
+        "3/4": 0.0029417987045452483,
+        "4/5": 0.23424761623532858
+      }
+    },
+    "proportional_odds_check": {
+      "threshold_models": [
+        {
+          "threshold": 1,
+          "n_positive": 56,
+          "n_negative": 44,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.9700888638243901,
+            "odds_ratio": 2.6381788876032806,
+            "ci95_low": 0.906029279049186,
+            "ci95_high": 7.6818575336767285,
+            "p": 0.0752408478672709
+          },
+          "cluster_2": {
+            "log_odds_ratio": 1.505621697465991,
+            "odds_ratio": 4.5069547218123995,
+            "ci95_low": 1.196263647289843,
+            "ci95_high": 16.980070330220055,
+            "p": 0.026097293190380233
+          }
+        },
+        {
+          "threshold": 2,
+          "n_positive": 37,
+          "n_negative": 63,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.7242088576197494,
+            "odds_ratio": 2.063098249683179,
+            "ci95_low": 0.5569239621808392,
+            "ci95_high": 7.642649045263573,
+            "p": 0.2784030996080631
+          },
+          "cluster_2": {
+            "log_odds_ratio": 1.8081702341831374,
+            "odds_ratio": 6.099276967177534,
+            "ci95_low": 1.437189875444047,
+            "ci95_high": 25.88466573412812,
+            "p": 0.014216565833820255
+          }
+        },
+        {
+          "threshold": 3,
+          "n_positive": 25,
+          "n_negative": 75,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 0.6297740280614382,
+            "odds_ratio": 1.877186339896784,
+            "ci95_low": 0.45681896798582505,
+            "ci95_high": 7.713840277324972,
+            "p": 0.38244172111354746
+          },
+          "cluster_2": {
+            "log_odds_ratio": 0.8798570700183481,
+            "odds_ratio": 2.4105551411913444,
+            "ci95_low": 0.4933833025064905,
+            "ci95_high": 11.77740725963782,
+            "p": 0.27699451541487474
+          }
+        },
+        {
+          "threshold": 4,
+          "n_positive": 12,
+          "n_negative": 88,
+          "converged": true,
+          "cluster_1": {
+            "log_odds_ratio": 1.064386000520807,
+            "odds_ratio": 2.8990584171237233,
+            "ci95_low": 0.2796294795583667,
+            "ci95_high": 30.055985939571297,
+            "p": 0.372379323892163
+          },
+          "cluster_2": {
+            "log_odds_ratio": 1.6897484711534068,
+            "odds_ratio": 5.418117720822432,
+            "ci95_low": 0.47945763008261855,
+            "ci95_high": 61.22751583206955,
+            "p": 0.17200324260175504
+          }
+        },
+        {
+          "threshold": 5,
+          "n_positive": 4,
+          "n_negative": 96,
+          "converged": false,
+          "cluster_1": {
+            "log_odds_ratio": 25.145028403141993,
+            "odds_ratio": 83242877212.86777,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.9999218351775493
+          },
+          "cluster_2": {
+            "log_odds_ratio": 26.526921355741802,
+            "odds_ratio": 331509185716.9442,
+            "ci95_low": 0.0,
+            "ci95_high": Infinity,
+            "p": 0.9999175394807944
+          }
+        }
+      ],
+      "cluster_1_heterogeneity": {
+        "log_or_range": [
+          0.6297740280614382,
+          25.145028403141993
+        ],
+        "q_statistic_independent_threshold_approximation": 0.20673989120489306,
+        "df": 4,
+        "p": 0.9950116213861682,
+        "interpretation": "descriptive threshold-coefficient check; threshold estimates are correlated because they use the same cases"
+      },
+      "cluster_2_heterogeneity": {
+        "log_or_range": [
+          0.8798570700183481,
+          26.526921355741802
+        ],
+        "q_statistic_independent_threshold_approximation": 0.7756833256338412,
+        "df": 4,
+        "p": 0.9416780053902958,
+        "interpretation": "descriptive threshold-coefficient check; threshold estimates are correlated because they use the same cases"
+      },
+      "overall_interpretation": "The proportional-odds form was treated as a sensitivity model. Threshold-specific coefficients were inspected for direction and magnitude; the heterogeneity p-values are exploratory because threshold fits are correlated."
+    }
+  }
+}
